@@ -1,2 +1,2 @@
-# serverless-rest-apis
-Building serverless rest api's with Firebase Cloud Functions
+# Building Serverless RESTful Web APIs with Cloud Functions, Firestore, Express and JavaScript ES6
+
