@@ -41,9 +41,9 @@ firebase deploy
 
 ## Read values from the request
 
-Content Type	
-Request Body	
-Behavior
+Content Type\n	
+Request Body\n	
+Behavior\n
 
 ```
 application/json	
@@ -59,5 +59,9 @@ request.body equals '6d792074657874' (the raw bytes of the request; see the Node
 text/plain	
 'my text'	
 request.body equals 'my text'
-application/x-www-form-urlencoded	'name=John'	request.body.name equals 'John'
+```
+```
+application/x-www-form-urlencoded	
+'name=John'	
+request.body.name equals 'John'
 ```
