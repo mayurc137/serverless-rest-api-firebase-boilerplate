@@ -38,3 +38,26 @@ To deploy functions to firebase
 ```
 firebase deploy
 ```
+
+## Read values from the request
+
+Content Type	
+Request Body	
+Behavior
+
+```
+application/json	
+'{"name":"John"}'	
+request.body.name equals 'John'
+```
+```
+application/octet-stream	
+'my text'	
+request.body equals '6d792074657874' (the raw bytes of the request; see the Node.js Buffer documentation)
+```
+```
+text/plain	
+'my text'	
+request.body equals 'my text'
+application/x-www-form-urlencoded	'name=John'	request.body.name equals 'John'
+```
