@@ -65,3 +65,67 @@ application/x-www-form-urlencoded
 'name=John'	
 request.body.name equals 'John'
 ```
+
+## Adding Middleware
+
+Add middleware to authenticate requests or perform additional tasks
+
+```
+let myMiddleware = (req, res, next) => {
+    //authentication code goes here
+    next();
+}
+
+app.use(myMiddleware);
+```
+
+## Building multiple CRUD interfaces:
+
+GET /
+
+```
+app.get('/', (req, res) => {
+    let response = Endpoints.list();
+    res.send(response);
+});
+```
+
+GET /:id
+
+```
+app.get('/:id', (req, res) => {
+    let id = req.params.id;
+    let response = Endpoints.getById(id);
+    res.send(response);
+});
+```
+
+POST /
+
+```
+app.post('/', (req, res) => {
+    let response = Endpoints.create();
+    res.send(response);
+});
+```
+
+PUT /:id
+
+```
+app.put('/:id', (req, res) => {
+    let id = req.params.id;
+    let body = req.body;
+    let response = Endpoints.update(id, body);
+    res.send(response);
+});
+```
+
+DELETE /:id
+
+```
+app.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    let response = Endpoints.delete(id);
+    res.send(response);
+});
+```
